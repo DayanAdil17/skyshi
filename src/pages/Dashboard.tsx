@@ -26,7 +26,7 @@ export default function Dashboard() {
     <Layout>
       <div flex="~" justify="between" p="y-15" data-cy="activity-title">
         <h1 font="bold" text="size-[36px]">
-          TESt
+          Activity
         </h1>
         <Button
           text="Tambah"
