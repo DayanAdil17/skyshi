@@ -90,7 +90,9 @@ TodoListProps) {
           <ButtonIcon onClick={handleEditTitle} icon={<Pen />} type="small" />
         </div>
 
-        <ButtonIcon onClick={toggleModal} icon={<Trash />} type="small" />
+        <div data-cy="todo-item-delete-button">
+          <ButtonIcon onClick={toggleModal} icon={<Trash />} type="small" />
+        </div>
       </div>
 
       <Modal isOpen={isOpen} closeModal={toggleModal}>

@@ -28,11 +28,13 @@ export default function Dashboard() {
         <h1 font="bold" text="size-[36px]">
           Activity
         </h1>
-        <Button
-          text="Tambah"
-          icon={<AiOutlinePlus />}
-          onClick={() => navigate('/new-activity')}
-        />
+        <div data-cy="activity-add-button">
+          <Button
+            text="Tambah"
+            icon={<AiOutlinePlus />}
+            onClick={() => navigate('/new-activity')}
+          />
+        </div>
       </div>
 
       {activities.length <= 0 ? (
@@ -48,7 +50,7 @@ export default function Dashboard() {
         <div
           // className="justify-center"
           grid="~ gap-5 cols-1 sm:cols-2 lg:cols-3 xl:cols-4"
-          data-cy="activity-card"
+          data-cy="activity-item"
         >
           {activities.map((activity) => (
             <ActivityCard

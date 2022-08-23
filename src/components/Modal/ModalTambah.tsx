@@ -77,17 +77,19 @@ export default function ModalTambah({
           >
             Nama List Item
           </label>
-          <input
-            type="text"
-            id="title"
-            className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Tambahkan nama list item"
-            required
-            onChange={handleChange}
-          />
+          <div data-cy="modal-add-name-input">
+            <input
+              type="text"
+              id="title"
+              className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Tambahkan nama list item"
+              required
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
-        <div className="" data-cy="modal-add-priority">
+        <div className="" data-cy="modal-add-priority-dropdown">
           <label
             htmlFor="priority"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -97,38 +99,40 @@ export default function ModalTambah({
             Priority
           </label>
 
-          <select
-            id="priority"
-            className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            w="[205px]"
-            placeholder="Pilih priority"
-            required
-            onChange={handleChange}
-          >
-            <option hidden>Pilih priority</option>
+          <div data-cy="todo-item-checkbox">
+            <select
+              id="priority"
+              className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              w="[205px]"
+              placeholder="Pilih priority"
+              required
+              onChange={handleChange}
+            >
+              <option hidden>Pilih priority</option>
 
-            {Object.keys(PriorityEnum).map((priority) => {
-              return (
-                <option
-                  key={priority}
-                  style={{
-                    fontSize: '16px',
-                    lineHeight: '24px',
-                  }}
-                  value={PriorityEnum[priority as keyof typeof PriorityEnum]}
-                  justify="between"
-                  space="x-3"
-                  w="full"
-                >
-                  {priority}
-                </option>
-              );
-            })}
-          </select>
+              {Object.keys(PriorityEnum).map((priority) => {
+                return (
+                  <option
+                    key={priority}
+                    style={{
+                      fontSize: '16px',
+                      lineHeight: '24px',
+                    }}
+                    value={PriorityEnum[priority as keyof typeof PriorityEnum]}
+                    justify="between"
+                    space="x-3"
+                    w="full"
+                  >
+                    {priority}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
         </div>
       </div>
       <div className="justify-end flex" p="x-[30px] y-[15px]">
-        <div className="" data-cy="modal-add-submit-button">
+        <div className="" data-cy="modal-add-save-button">
           <Button text="Simpan" onClick={handleSubmit} />
         </div>
 

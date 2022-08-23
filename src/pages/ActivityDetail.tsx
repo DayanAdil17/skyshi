@@ -152,7 +152,7 @@ export default function ActivityDetail() {
             )}
           </div>
 
-          <div>
+          <div data-cy="todo-add-button">
             <ButtonIcon
               onClick={handleToggleActivityInput}
               icon={<Pen />}
@@ -163,10 +163,12 @@ export default function ActivityDetail() {
 
         <div flex="~" align="items-center" justify="between" space="x-4">
           {/* <ButtonIcon icon={<ArrowSort />} type="small" onClick={() => ''} /> */}
-          <Dropdown
-            selectedMenu={selectedMenu}
-            onClick={handleDropdownChange}
-          />
+          <div data-cy="todo-sort-button">
+            <Dropdown
+              selectedMenu={selectedMenu}
+              onClick={handleDropdownChange}
+            />
+          </div>
 
           <Button
             text="Tambah"

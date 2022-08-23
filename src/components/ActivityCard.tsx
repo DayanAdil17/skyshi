@@ -56,22 +56,28 @@ export default function ActivityCard({
         hover="cursor-pointer"
         onClick={() => navigate(`/activity/${id}`)}
       >
-        <header className="flex items-center justify-between leading-tight p-2 md:p-4">
-          <h1 className="text-lg" font="bold">
-            <a className="no-underline hover:underline text-black" href="#">
-              {title}
-            </a>
-          </h1>
-        </header>
+        <div data-cy="activity-title">
+          <header className="flex items-center justify-between leading-tight p-2 md:p-4">
+            <h1 className="text-lg" font="bold">
+              <a className="no-underline hover:underline text-black" href="#">
+                {title}
+              </a>
+            </h1>
+          </header>
+        </div>
 
         <footer className="flex items-center justify-between leading-none p-2 md:p-4">
-          <span>
-            {format(new Date(created_at!), 'd MMMM yyyy', {
-              locale,
-            })}
-          </span>
+          <div data-cy="activity-date">
+            <span>
+              {format(new Date(created_at!), 'd MMMM yyyy', {
+                locale,
+              })}
+            </span>
+          </div>
 
-          <ButtonIcon onClick={toggleModal} icon={<Trash />} type="medium" />
+          <div data-cy="data-activity-item-delete-button">
+            <ButtonIcon onClick={toggleModal} icon={<Trash />} type="medium" />
+          </div>
         </footer>
       </article>
 

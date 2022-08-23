@@ -37,11 +37,11 @@ export default function ModalDelete({
         className="flex justify-center space-x-6"
         data-cy="todo-modal-delete-batal-button"
       >
-        <div className="mt-4">
+        <div className="mt-4" data-cy="modal-delete-cancel-button">
           <Button text="Batal" type="cancel" onClick={closeModal} />
         </div>
 
-        <div className="m-[15px]" data-cy="todo-modal-delete-hapus-button">
+        <div className="m-[15px]" data-cy="activity-item-delete-button">
           <Button text="Hapus" type="approve" onClick={handleDelete} />
         </div>
       </div>
